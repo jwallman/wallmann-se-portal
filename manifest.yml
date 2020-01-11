@@ -1,0 +1,9 @@
+applications:
+   - name: wallmann-se-portal
+memory: 256m
+buildpack: https://github.com/cloudfoundry/java-buildpack.git
+path: ./target/wallmann-se-portal-0.0.1-SNAPSHOT.jar
+timeout: 180
+env: 
+  JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 13.0.+ } }'
+  JAVA_OPTS: '--enable-preview -XX:ReservedCodeCacheSize=32M -XX:MaxDirectMemorySize=10M -XX:MaxMetaspaceSize=64M -Xss512K'
